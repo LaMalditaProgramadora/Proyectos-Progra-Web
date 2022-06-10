@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html xmlns:th="thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<div th:replace="layout/layout :: header"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<div class="card bg-danger text-white">
+					<div class="card-header">Error: Acceso Negado</div>
+					<div class="card-body">
+						<h5 class="card-title mb-3">No tienes permiso ROLE_ADMIN</h5>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4"></div>
+		</div>
+	</div>
+	<div th:replace="layout/layout :: footer"></div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html xmlns:th="thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<div th:replace="layout/layout :: header"></div>
+	<div class="container">
+		<div class="row mb-5">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<form th:action="@{/login}" method="post">
+					<div class="form-group">
+						<h5 class="mb-3">Login</h5>
+						<label for="username">Username:</label> <input type="text"
+							name="username" id="username" class="form-control mb-2" required></input>
+						<label for="password">Password:</label> <input name="password"
+							id="password" type="password" class="form-control mb-2" required></input>
+					</div>
+					<button type="submit" class="btn btn-primary mb-2">Iniciar Sesi&oacute;n</button>
+					<br> <a th:href="@{/users/new}">Registrarme</a>
+				</form>
+			</div>
+			<div class="col-sm-4"></div>
+		</div>
+	</div>
+	<div th:replace="layout/layout :: footer"></div>
+</body>
+</html>

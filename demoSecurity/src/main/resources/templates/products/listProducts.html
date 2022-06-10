@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<div th:replace="layout/layout :: header"></div>
+	<div class="mr-5 ml-5">
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<div class="form-group">
+					<h5 class="mb-3">Listar Productos</h5>
+					<a th:href="@{/products/new}" id="add-row" type="button"
+						class="btn btn-primary btn-md left-block mb-3">Nuevo </a>
+					<table class="table table-bordered table-hover table-striped"
+						id="tab_logic">
+						<thead>
+							<tr>
+								<th class="text-center">Id</th>
+								<th class="text-center">Nombre</th>
+								<th class="text-center">Precio</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="p: ${listProducts}">
+								<td th:text="${p.id}"></td>
+								<td th:text="${p.name}"></td>
+								<td th:text="${p.price}"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="col-sm-4"></div>
+		</div>
+	</div>
+	<div th:replace="layout/layout :: footer"></div>
+</body>
+</html>

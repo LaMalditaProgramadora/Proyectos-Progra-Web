@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<div th:replace="layout/layout :: header"></div>
+	<div class="container">
+		<div class="row mb-5">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<form th:action="@{/users/save}" method="post" th:object="${user}">
+					<div class="form-group">
+					<h5 class="mb-3">Registrar Usuario</h5>
+						<label for="username">Username:</label> <input type="text"
+							th:field="*{username}" class="form-control mb-2" id="username"
+							required></input> <label for="password">Password:</label> <input
+							type="password" th:field="*{password}" class="form-control mb-2"
+							id="password" required></input> <label for="fullName">Nombre
+							completo:</label> <input type="text" th:field="*{fullName}"
+							class="form-control mb-2" id="fullName" required></input>
+					</div>
+					<button type="submit" class="btn btn-primary">Registrar</button>
+					<a th:href="@{/login}" class="btn btn-danger">Cancelar</a>
+				</form>
+			</div>
+			<div class="col-sm-4"></div>
+		</div>
+	</div>
+	<div th:replace="layout/layout :: footer"></div>
+</body>
+</html>

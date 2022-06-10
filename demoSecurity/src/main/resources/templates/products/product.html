@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<div th:replace="layout/layout :: header"></div>
+	<div class="container">
+		<div class="row mb-5">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<form th:action="@{/products/save}" method="post"
+					th:object="${product}">
+					<div class="form-group">
+						<h5 class="mb-3">Registrar Producto</h5>
+						<label for="name">Nombre:</label> <input type="text"
+							th:field="*{name}" class="form-control mb-2" id="name" required></input>
+						<label for="price">Precio:</label> <input type="number"
+							th:field="*{price}" class="form-control mb-2" id="price" required></input>
+					</div>
+					<button type="submit" class="btn btn-primary">Aceptar</button>
+					<a th:href="@{/products}" class="btn btn-danger">Cancelar</a>
+				</form>
+			</div>
+			<div class="col-sm-4"></div>
+		</div>
+	</div>
+	<div th:replace="layout/layout :: footer"></div>
+</body>
+</html>
