@@ -1,7 +1,5 @@
 package com.example.demoSecurity.service.impl;
 
-import java.util.ArrayList;
-
 import com.example.demoSecurity.model.Role;
 import com.example.demoSecurity.model.Users;
 import com.example.demoSecurity.repository.IRoleRepository;
@@ -28,13 +26,12 @@ public class UsersServiceImpl implements IUsersService {
 	public void insert(Users user) {
 		Users objUser = user;
 		objUser.setPassword(passwordEncoder.encode(objUser.getPassword()));
-		objUser.setEnabled(true);
+		
 		Role role = new Role();
 		// Se asigna el rol con el que queremos que el usuario se cree
 		role.setAuthority("ROLE_USER");
 		role = roleRepository.save(role);
-
-		objUser.setRoles(new ArrayList<Role>());
+		
 		objUser.getRoles().add(role);
 		objUser = userRepository.save(objUser);
 	}

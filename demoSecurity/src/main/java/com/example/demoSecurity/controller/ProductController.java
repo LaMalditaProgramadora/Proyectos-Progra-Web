@@ -2,15 +2,13 @@ package com.example.demoSecurity.controller;
 
 import java.text.ParseException;
 
-import org.springframework.validation.BindingResult;
-
 import com.example.demoSecurity.model.Product;
-import com.example.demoSecurity.model.Users;
 import com.example.demoSecurity.service.IProductService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -29,7 +27,7 @@ public class ProductController {
 
 	@RequestMapping("/new")
 	public String goNewProduct(Model model) {
-		model.addAttribute("product", new Users());
+		model.addAttribute("product", new Product());
 		return "products/product";
 	}
 

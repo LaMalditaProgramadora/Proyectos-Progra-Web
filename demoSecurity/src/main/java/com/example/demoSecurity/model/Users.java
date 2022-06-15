@@ -37,6 +37,7 @@ public class Users {
 	public Users() {
 		super();
 		roles = new ArrayList<Role>();
+		enabled = true;
 	}
 
 	public Long getId() {
