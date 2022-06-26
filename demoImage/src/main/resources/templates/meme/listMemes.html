@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<div th:replace="layout/layout :: header"></div>
+	<div class="mr-5 ml-5">
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<div class="form-group">
+					<h5 class="mb-3">Listar Memes</h5>
+					<a th:href="@{/memes/new}" id="add-row" type="button"
+						class="btn btn-primary btn-md left-block mb-3">Nuevo </a>
+					<table class="table table-bordered table-hover table-striped"
+						id="tab_logic">
+						<thead>
+							<tr>
+								<th class="text-center">Id</th>
+								<th class="text-center">T&iacute;tulo</th>
+								<th class="text-center">Detalle</th>
+								<th class="text-center">Editar</th>
+								<th class="text-center">Eliminar</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="m: ${listMemes}">
+								<td th:text="${m.id}"></td>
+								<td th:text="${m.title}"></td>
+								<td><a th:href="@{'/memes/detail/' + ${m.id}}">Detalle</a></td>
+								<td><a th:href="@{'/memes/update/' + ${m.id}}">Editar</a></td>
+								<td><a th:href="@{'/memes/delete/' + ${m.id}}">Eliminar</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="col-sm-4"></div>
+		</div>
+	</div>
+	<div th:replace="layout/layout :: footer"></div>
+</body>
+</html>

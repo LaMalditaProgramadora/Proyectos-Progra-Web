@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<div th:replace="layout/layout :: header"></div>
+	<div class="container">
+		<div class="row mb-5">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<form th:action="@{/memes/save}" method="post" th:object="${meme}"
+					enctype="multipart/form-data">
+					<div class="form-group">
+						<h5 class="mb-3">Detalle Meme</h5>
+						<label
+							for="title">T&iacute;tulo:</label> <input type="text"
+							th:field="*{title}" class="form-control mb-2" id="title" required
+							readonly></input> <label for="description">Descripci&oacute;n:</label>
+						<input type="text" th:field="*{description}"
+							class="form-control mb-2" id="description" required readonly></input>
+						<label for="title">Imagen:</label> <br>
+							<img th:if="${meme.image}"
+								class="rounded" style="max-width: 50%; "
+								th:src="@{'/memes/uploads/' + ${meme.image}}" />
+					</div>
+					<a th:href="@{/memes}" class="btn btn-danger">Regresar</a>
+				</form>
+			</div>
+			<div class="col-sm-4"></div>
+		</div>
+	</div>
+	<div th:replace="layout/layout :: footer"></div>
+</body>
+</html>
