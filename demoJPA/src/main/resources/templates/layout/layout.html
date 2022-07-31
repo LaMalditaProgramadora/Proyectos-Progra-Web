@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:fragment="frag-head">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{/css/fontawesome.min.css}" rel="stylesheet">
+<link th:href="@{/css/solid.min.css}" rel="stylesheet">
+<link th:href="@{/css/style.css}" rel="stylesheet">
+<title>Demo JPA</title>
+</head>
+<body>
+
+	<header th:fragment="frag-header">
+		<div class="text-center" style="background-color: #7952b3;">
+			<div class="container-fluid"
+				style="padding-top: 0.5rem; padding-bottom: 0.5rem">
+				<a th:href="@{/customers}">Demo JPA</a>
+			</div>
+		</div>
+	</header>
+	<main>
+		<section></section>
+	</main>
+	<footer th:fragment="frag-footer">
+		<br>
+		<div class="text-center">
+			<p>&copy;2022 - LaMalditaProgramadora</p>
+		</div>
+		<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+	</footer>
+
+</body>
+</html>

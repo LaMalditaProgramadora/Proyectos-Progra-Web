@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: frag-head">
+<meta charset="ISO-8859-1">
+<title>Customers</title>
+</head>
+<body>
+
+	<header th:insert="layout/layout :: frag-header"></header>
+	<main>
+
+		<section>
+
+			<div class="card text-center">
+				<div class="card-header">Customers</div>
+				<div class="card-body">
+
+					<form th:action="@{/customers/searchByQueryNative}" method="get"
+						class="d-flex" style="margin-right: 20px;">
+						<input class="form-control me-2" type="search"
+							name="fullNameQueryNative"
+							placeholder="searchCustomerQueryNative" aria-label="Search">
+						<button class="btn btn-warning" type="submit">
+							<i class="fas fa-search"></i>
+						</button>
+					</form>
+					<br>
+					<br>
+
+					<form th:action="@{/customers/searchByQueryJPQL}" method="get"
+						class="d-flex" style="margin-right: 20px;">
+						<input class="form-control me-2" type="search"
+							name="fullNameQueryJPQL" placeholder=searchCustomerQueryJPQL
+							aria-label="Search">
+						<button class="btn btn-warning" type="submit">
+							<i class="fas fa-search"></i>
+						</button>
+					</form>
+					<br>
+					<br>
+
+					<form th:action="@{/customers/searchBySpringDataJPA}" method="get"
+						class="d-flex" style="margin-right: 20px;">
+						<input class="form-control me-2" type="search"
+							name="fullNameSpringDataJPA"
+							placeholder="searchCustomerSpringDataJPA" aria-label="Search">
+						<button class="btn btn-warning" type="submit">
+							<i class="fas fa-search"></i>
+						</button>
+					</form>
+					<br>
+					<br>
+
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">Full Name</th>
+								<th scope="col">DNI</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="customer : ${customers}">
+								<th scope="row" th:text="${customer.idCustomer}"></th>
+								<td th:text="${customer.fullName}">Mark</td>
+								<td th:text="${customer.dniNumber}">Otto</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+			</div>
+		</section>
+
+	</main>
+	<footer th:replace="layout/layout :: frag-footer"></footer>
+
+</body>
+</html>
