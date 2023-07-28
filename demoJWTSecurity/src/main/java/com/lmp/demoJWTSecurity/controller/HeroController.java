@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/heroes")
 public class HeroController {
-
     @Autowired
     private IHeroService heroService;
 

@@ -1,7 +1,5 @@
 package com.lmp.demoJWTSecurity.service.impl;
 
-import java.util.List;
-
 import com.lmp.demoJWTSecurity.model.Users;
 import com.lmp.demoJWTSecurity.repository.IUserRepository;
 import com.lmp.demoJWTSecurity.service.IUserService;
@@ -19,8 +17,4 @@ public class UserServiceImpl implements IUserService {
         return userRepository.save(user);
     }
 
-    @Override
-    public List<Users> findAll() {
-        return userRepository.findAll();
-    }
 }

@@ -17,14 +17,8 @@ public class UserController {
     private IUserService userService;
 
     @PostMapping
-    public ResponseEntity<?> saveUser(@RequestBody Users user) {
+    public ResponseEntity<?> save(@RequestBody Users user) {
        user.setPassword(bcrypt.encode(user.getPassword()));
        return ResponseEntity.ok(userService.save(user));
     }
-
-    @GetMapping
-    public ResponseEntity<?> findAll() {
-        return ResponseEntity.ok(userService.findAll());
-    }
-
 }
