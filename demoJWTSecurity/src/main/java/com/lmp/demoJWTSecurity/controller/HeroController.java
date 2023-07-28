@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/heroes")
+@CrossOrigin
 public class HeroController {
     @Autowired
     private IHeroService heroService;
