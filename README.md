@@ -5,3 +5,4 @@
 3. demoJPA: Proyecto Spring Boot para búsqueda por atributos.
 4. demoSwagger: Microservicio con documentado con Swagger.
 5. demoJWTSecurity: Proyecto Spring Boot 3 con JWT y Spring Security.
+5. demoLogs: Proyecto Spring Boot 3 con Log4j2 y Lombok.

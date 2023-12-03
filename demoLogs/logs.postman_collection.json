@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "0a7a7140-0a41-4b50-b518-ec1406b5b03e",
+		"name": "logs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5107072"
+	},
+	"item": [
+		{
+			"name": "Log info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/logs/info",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"logs",
+						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Log error",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/logs/error",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"logs",
+						"error"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Log debug",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/logs/debug",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"logs",
+						"debug"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
